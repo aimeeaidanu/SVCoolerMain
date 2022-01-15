@@ -11,10 +11,12 @@ You must state clearly and obviously to all end users that you are using code fr
 Your application must also be licensed under the same license.
 
 # Less files
-`material-cards.less
+```
+material-cards.less
 gm-variables.less
 mixin.less
-material-color.less` 
+material-color.less
+``` 
 `material-cards.less` is the main `.less` file that includes the other `.less` files.
 `gm-variables.less` contains all the color palette with the color accent.
 `mixin.less` contains some utilities.
@@ -50,18 +52,20 @@ The default **card_activator** is the **click** event on button card, but you ca
 # Methods
 `toggle`: change selected material card state
 
-`$('.material-card').materialCard('toggle');`
+```$('.material-card').materialCard('toggle');````
 `open`: open selected material card
 
-`$('.material-card:eq(1)').materialCard('open');`
+```$('.material-card:eq(1)').materialCard('open');```
 `close`: close selected material card
 
-`$('.material-card:eq(2)').materialCard('close');`
+```$('.material-card:eq(2)').materialCard('close');```
 `isOpen`: check material card status, return true or false
 
-`if($('.material-card:eq(3)').materialCard('isOpen') === true) {
+```
+if($('.material-card:eq(3)').materialCard('isOpen') === true) {
 	// do something
-}`
+}
+```
 
 # Events
 `show.material-card`: triggered immediately when the open instance method is called
