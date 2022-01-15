@@ -39,12 +39,14 @@ Inside the `js/` folder you can find the two files: `jquery.material-cards.js` a
 `$('.material-card').materialCard(options);`
 
 # Options
-`options = {
+```ruby
+options = {
     icon_close	   : 'fa-arrow-left', //string
     icon_open	   : 'fa-bars',       //string
     icon_spin	   : 'fa-spin-fast',  //string
     card_activator : 'click'          //string: click or hover
-});`
+});
+```
 The icons are from Font Awesome, `fa-spin-fast` is similar to `fa-spin` but spin faster.
 
 The default **card_activator** is the **click** event on button card, but you can also use **hover** (this option remove the button).
@@ -52,16 +54,22 @@ The default **card_activator** is the **click** event on button card, but you ca
 # Methods
 `toggle`: change selected material card state
 
-```$('.material-card').materialCard('toggle');````
+```ruby
+$('.material-card').materialCard('toggle');
+```
 `open`: open selected material card
 
-```$('.material-card:eq(1)').materialCard('open');```
+```ruby
+$('.material-card:eq(1)').materialCard('open');
+```
 `close`: close selected material card
 
-```$('.material-card:eq(2)').materialCard('close');```
+```ruby
+$('.material-card:eq(2)').materialCard('close');
+```
 `isOpen`: check material card status, return true or false
 
-```
+```ruby
 if($('.material-card:eq(3)').materialCard('isOpen') === true) {
 	// do something
 }
