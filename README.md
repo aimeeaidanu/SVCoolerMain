@@ -82,12 +82,16 @@ if($('.material-card:eq(3)').materialCard('isOpen') === true) {
 `hidden.material-card`: triggered when the card has become hidden to the user (will wait for end of CSS transitions)
 
 # Examples
-`$('.material-card').on('shown.material-card', function (event) {
+```ruby
+$('.material-card').on('shown.material-card', function (event) {
     console.log(event.type, event.namespace, $(this));
     //that return
     //shown material-card [article.material-card...]
-});`
+});
+```
+```ruby
 var fullCardEvent = 'shown.material-card show.material-card hide.material-cards hidden.material-cards';
 $('.material-cards').on(fullCardEvent, function (event) {
 	//   do something
-});`
+});
+```
