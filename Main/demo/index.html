@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #92bde7;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #79c879;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: middle;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active" onclick="scrollHome()" value="scrollHome">Home</a>
+  <a href="#donate" onclick="scrollDonate()" value="scrollDonate">Donate</a>
+  <a href="#about" onclick="scrollAbout()" value="scrollAbout">About</a>
+  <a href="#contact" onclick="scrollContact()" value="scrollContact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script>
+    function scrollHome(){
+      window.scrollTo(100,0)
+    }
+    function scrollDonate(){
+      var donateElement = document.getElementById('donate');
+      var topPos = donateElement.offsetTop;
+      document.getElementById('donate').scrollTop = topPos;
+    }
+    function scrollAbout(){
+      var aboutElement = document.getElementById('about');
+      var topPos = aboutElement.offsetTop;
+      document.getElementById('about').scrollTop = topPos;
+    }
+    function scrollContact(){
+      var contactElement = document.getElementById('contact');
+      var topPos = contactElement.offsetTop;
+      document.getElementById('contact').scrollTop = topPos;
+    }
+    </script>
+</body>
+<!-- Welcome Page -->
+<head>
+<style>
+:root {
+  --bg-color: hsl(0 0% 100%);
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 24;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+h1 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h1::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+  color: hsl(0 0% 0% / 0.7);
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+.paragraph {
+  position: relative;
+  margin-left:100px;
+  margin-right:100px;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#yt-link {
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  color: hsl(0 0 0 / 0.7);
+
+  &:hover,
+  &:focus {
+    color: teal;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  p.example {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p.example {
+    font-size: 30px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+  <h1 class="paragraph">Hello, Welcome to SVCooler!</h1>
+  <p class="subtitle">(Website) Created by Solar Vaccine Team</p>
+
+  <p class="paragraph">We aim to create a solar-powered cooler to keep vaccines refrigerated for communities with little access to electricity or medical care. </p>
+
+  <p class ="paragraph"><em>Vaccines for children are inexpensive and generally available in many countries. However, vaccines must be kept carefully refrigerated up until it is administered. If the cold chain is ever broken, that batch of vaccine is effectively ruined. Stable electricity is lacking for billions of people, so the final barrier preventing vaccine access for all is a practical vaccine refrigeration device that doesn’t require connection to a stable electric grid.</em></p>
+
+  <p class ="paragraph">
+The ultimate goal of our “Solar Vaccine Cooler” project is to 1) develop a low cost and robust solar-powered vaccine refrigerator that uses AI/Machine Learning to precisely manage the vaccine storage conditions; 2) deploy and field test in the Philippines, Cambodia, Indonesia, and Rwanda in the summers of 2022-2023; and 3) raise donations to provide vaccines for 100,000 children in need.
+</p>
+
+  <p class="paragraph">The “Solar Vaccine Cooler” is a solar-powered vaccine storage device designed to keep vaccines safely stored within a specific temperature range. It utilizes solar panels to charge the built-in battery and sustain the device overnight. The Cooler has automatic temperature monitoring, using smart temperature control to save energy while keeping the vaccines within their acceptable temperature range. </p>
+
+</body>
+
+<!-- Donate -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+<style>
+</style>
+</head>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.testing span{
+  color: rgb(88,217,226)
+}
+</style>
+</head>
+<body>
+
+<h2 id="donate" class="testing" class="donate"><center><span>Donate</span> Today!</center></h2>
+<br>
+
+<div class="gfm-embed" data-url="https://www.gofundme.com/f/help-kids-in-asia-and-africa-get-vaccinated/widget/large/"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+
+</body>
+
+<!-- About Us / About Me / About -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>SVCooler</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/material-cards.css">
+    <style type="text/css">
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            color: #37474F;
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 200;
+        }
+
+        .testing span{
+        color: rgb(88,217,226)
+        }
+
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="page-header">
+        <h2 id="about" class="testing" class="about"><span>About</span> Us</h2>
+    </div>
+    <div class="row active-with-click">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Red">
+                <h2>
+                    <span>Aidan Chen</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Website + R&D
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/919847417015304193/931975938651066398/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        Middle Schooler in the United States, currently working on the Website and the research and development of SVCooler.    
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Pink">
+                <h2>
+                    <span>Christopher Zhang</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Research & Development
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/919847417015304193/931976549534662706/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Purple">
+                <h2>
+                    <span>Jonathan Du</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Research & Development
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/919847417015304193/931977448231436378/jonathanrealpfp.jpg">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Deep-Purple">
+                <h2>
+                    <span>Leo Li</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Research & Development
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/931514266601803806/931978191428517938/leorealpfp.jpg">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Indigo">
+                <h2>
+                    <span>Little Piglet</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Emotional Support
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/931965903548076142/931980819654905997/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Blue">
+                <h2>
+                    <span>Little Piggy</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Emotional Support
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/931965903548076142/931981535081537556/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Light-Blue">
+                <h2>
+                    <span>Little Horse</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Customer Support
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/931965903548076142/931981929044148266/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Cyan">
+                <h2>
+                    <span>Little Penguin</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Emotional Support
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/931965903548076142/931982206182760479/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Teal">
+                <h2>
+                    <span>Little Tiger</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Foreign Policies & State Department
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="https://cdn.discordapp.com/attachments/669401704890105857/932027110946652190/unknown.png">
+                    </div>
+                    <div class="mc-description">
+                        [placeholder]
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
+
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
+</script>
+</body>
+
+<!-- Contact Us / Contact Form / Contact Me-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acme Web Design</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <style>
+    *{
+        box-sizing: border-box;
+      }
+
+      body{
+        color:#485e74;
+        line-height:1.6;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding:1em;
+      }
+
+      .container{
+        max-width:1170px;
+        margin-left:auto;
+        margin-right:auto;
+        padding:1em;
+      }
+
+      ul{
+        list-style: none;
+        padding:0;
+      }
+
+      .brand{
+        text-align: center;
+      }
+
+      .brand span{
+        color:rgb(88, 217, 226);
+      }
+
+      .testing span{
+          color: rgb(88,217,226)
+      }
+
+      .wrapper{
+        box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+      }
+
+      .wrapper > *{
+        padding: 1em;
+      }
+
+      .company-info{
+        background:#c9e6ff;
+      }
+
+      .company-info h3, .company-info ul{
+        text-align: center;
+        margin:0 0 1rem 0;
+      }
+
+      .contact{
+        background:#f9feff;
+      }
+
+      /* FORM STYLES */
+      .contact form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap:20px;
+      }
+
+      .contact form label{
+        display:block;
+      }
+
+      .contact form p{
+        margin:0;
+      }
+
+      .contact form .full{
+        grid-column: 1 / 3;
+      }
+
+      .contact form button, .contact form input, .contact form textarea{
+        width:100%;
+        padding:1em;
+        border:1px solid #c9e6ff;
+      }
+
+      .contact form button{
+        background:#c9e6ff;
+        border:0;
+        text-transform: uppercase;
+      }
+
+      .contact form button:hover,.contact form button:focus{
+        background:#92bde7;
+        color:#fff;
+        outline:0;
+        transition: background-color 2s ease-out;
+      }
+
+      .alert{
+        text-align: center;
+        padding:10px;
+        background:#79c879;
+        color:#fff;
+        margin-bottom:10px;
+        display:none;
+      }
+
+      /* LARGE SCREENS */
+      @media(min-width:700px){
+        .wrapper{
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+        }
+
+        .wrapper > *{
+          padding:2em;
+        }
+
+        .company-info h3, .company-info ul, .brand{
+          text-align: left;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="contact" class="testing"><span>Contact</span> Us <br></br></h2>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>More Ways to Contact</h3>
+        <ul>
+          <li><i class="fa fa-phone"></i> [placeholder] </li>
+          <li><i class="fa fa-envelope"></i> solarvaccinecooler@gmail.com</li>
+        </ul>
+        <h3>Expect an response in 3 business days.</h3>
+      </div>
+      <div class="contact">
+        <h3>Email Us</h3>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src=""></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCUy5wN7ZZ-o17RohGRjVp2FmW3pyNAKz0",
+      authDomain: "fire9db-c532c.firebaseapp.com",
+      databaseURL: "https://fire9db-c532c-default-rtdb.firebaseio.com",
+      projectId: "fire9db-c532c",
+      storageBucket: "fire9db-c532c.appspot.com",
+      messagingSenderId: "263652227090",
+    };
+    firebase.initializeApp(config);
+
+    // Reference messages collection
+    var messagesRef = firebase.database().ref('messages');
+
+    // Listen for form submit
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+    // Submit form
+    function submitForm(e){
+      e.preventDefault();
+
+      // Get values
+      var name = getInputVal('name');
+      var company = getInputVal('company');
+      var email = getInputVal('email');
+      var phone = getInputVal('phone');
+      var message = getInputVal('message');
+
+      // Save message
+      saveMessage(name, company, email, phone, message);
+
+      // Show alert
+      document.querySelector('.alert').style.display = 'block';
+
+      // Hide alert after 3 seconds
+      setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none';
+      },3000);
+
+      // Clear form
+      document.getElementById('contactForm').reset();
+    }
+
+    // Function to get get form values
+    function getInputVal(id){
+      return document.getElementById(id).value;
+    }
+
+    // Save message to firebase
+    function saveMessage(name, company, email, phone, message){
+      var newMessageRef = messagesRef.push();
+      newMessageRef.set({
+        name: name,
+        company:company,
+        email:email,
+        phone:phone,
+        message:message
+      });
+    }
+  </script>
+</body>
+
+
+<!-- Go To TOp Button -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 33px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
