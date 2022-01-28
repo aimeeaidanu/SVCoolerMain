@@ -1,0 +1,83 @@
+<head>
+  <style>
+  .DoNaTecontainer { 
+    height: 450px;
+    width: 400px;
+    position: relative;
+    border: 2px solid gray; 
+    border-radius: 4px;
+    padding: 0px 10px 0px 10px
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 91%;
+    left: 1%
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+        body {
+        font: 20px "Helvetica";
+        }
+  
+        a {  
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        }
+  
+        .donate {
+        background: #ff9900;
+        background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.4) 100%),
+                    -webkit-linear-gradient(left, lighten(#00684d, 15%) 0%, #00684d 50%, lighten(#00684d, 15%) 100%);
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%),
+                    linear-gradient(to right, lighten(#00684d, 15%) 0%, #00684d 50%, lighten(#00684d, 15%) 100%);
+        background-position: 0 0;
+        background-size: 200% 100%;
+        border-radius: 4px;
+        color: #fff;
+        padding: 15px 15px 15px 15px;
+        text-shadow: 1px 1px 5px #666;
+        -webkit-transition: all 800ms;
+        transition: all 800ms;
+        max-width:20em;
+        white-space:nowrap;
+        left: 5px;
+        
+        &:hover {
+            background-position: -100% 0;
+            
+            &:after {
+            border-left: 1px solid lighten(#00684d, 5%);
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+            }
+        }
+        }
+        #FlexContainer {x
+       display: flex;
+          margin: 0 -5px;
+      }
+        .elementdonate {
+    margin: 0 5px;
+    bottom: 17px
+  }
+        
+  </style>
+  </head>
+  <body>
+  
+  <div class="DoNaTecontainer">
+    <img src="https://cdn.discordapp.com/attachments/934347049812492288/934604271868059700/unknown.png" alt="vacine" width="395" height="275">
+    <h2 style="padding=10px"><b>Help Kids in Asia and Africa get Vaccinated</b></h2>
+    <div class="vertical-center">
+    <div class="FlexContainer">
+      <a href="https://buy.stripe.com/test_5kA02s3P8aH0aRi144" class="donate elementdonate">Donate </a>
+      <img src="https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png" alt="logothin" width="120" height="50" class="elementdonate">	
+      </div>
+    </div>
+  </div>
+  
+  </body>
+  
